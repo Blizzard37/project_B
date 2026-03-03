@@ -24,3 +24,4 @@ jobs:
         run: |
               echo "Informix user: $DB_User "
               echo "Informix password: $DB_Password"
+              echo "DB name is : $DB_Name"
