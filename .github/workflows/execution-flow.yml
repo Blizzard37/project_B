@@ -46,7 +46,7 @@ jobs:
       - name: Test result
         if: success() && steps.run_tests.outcome == 'success'
         run: echo "Test was successful"
-      - name: Display values:
+      - name: Display values
         run: |
               echo "Informix user: $DB_User "
               echo "Informix password: $DB_Password"
