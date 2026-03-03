@@ -1,0 +1,21 @@
+name: Resusale workflow
+on: 
+  workflow_call:
+    inputs:
+      artifact-name:
+        description: The name of the deployable artifcat files 
+        required: true
+        default: dist
+        type: string
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/download@v4
+        with: 
+          name: ${{inputs.artifact-name}}
+
+      - name: Deploy
+        run: echo "Downloading and Deploying"

@@ -68,11 +68,10 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    uses: ./.github/workflow/reusable.yaml
+    with: 
+      artifact-name: dist-files
     steps:
-      - name: Get build artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: dist-files
       - name: Output contents
         run: |
              ls
