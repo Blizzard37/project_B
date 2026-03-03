@@ -23,9 +23,7 @@ jobs:
         run: npm run lint
   test:
     runs-on: ubuntu-latest
-    env:
-      DB_User: informix_1
-      DB_Password: password_1
+    environment: test
     steps:
       - name: Get code
         uses: actions/checkout@v4
@@ -50,8 +48,8 @@ jobs:
         run: echo "Test was successful"
       - name: Display values
         run: |
-              echo "Informix user: $DB_User "
-              echo "Informix password: $DB_Password"
+              echo "Informix user: $ secrets.DB_USER "
+              echo "Informix password: $ secrets.DB_PASSWORD"
   build:
     needs: test
     runs-on: ubuntu-latest
