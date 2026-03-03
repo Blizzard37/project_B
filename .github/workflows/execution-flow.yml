@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+env:
+  DB_Name: mongo
 jobs:
   lint:
     runs-on: ubuntu-latest

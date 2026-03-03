@@ -10,6 +10,7 @@ on:
 
 jobs:
   deploy:
+    environment: test
     runs-on: ubuntu-latest
     steps:
       - name: Get code
@@ -22,6 +23,5 @@ jobs:
         run: echo "Downloading and Deploying"
       - name: Display
         run: |
-              echo "Informix user: $DB_User "
-              echo "Informix password: $DB_Password"
-              echo "DB name is : $DB_Name"
+              echo "Informix user: $ {{secrets.DB_USER}} "
+              echo "Informix password: $secrets.DB_PASSWORD"
