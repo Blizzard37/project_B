@@ -36,11 +36,13 @@ jobs:
         id: run_tests
         run: npm run test
       - name: Upload test report
-        if: steps.run_tests == 'success'
         uses: actions/upload-artifact@v4
         with:
           name: test-report
           path: test.json
+      - name: Test result
+        if: steps.run_tests == 'success'
+          echo "Test was successful"
   build:
     needs: test
     runs-on: ubuntu-latest
@@ -71,9 +73,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist-files
-      - name: Test-checkout
-        if: jobs.test.steps.run_tets == 'success'
-        run: echo "Test was successful"
       - name: Output contents
         run: |
              ls
