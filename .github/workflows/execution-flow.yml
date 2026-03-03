@@ -48,8 +48,8 @@ jobs:
         run: echo "Test was successful"
       - name: Display values
         run: |
-              echo "Informix user: $ {{ secrets.DB_USER }}"
-              echo "Informix password: $ {{ secrets.DB_PASSWORD }}"
+              echo "Informix user: ${{ secrets.DB_USER }}"
+              echo "Informix password: ${{ secrets.DB_PASSWORD }}"
   build:
     needs: test
     runs-on: ubuntu-latest
