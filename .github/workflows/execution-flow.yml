@@ -41,7 +41,7 @@ jobs:
           name: test-report
           path: test.json
       - name: Test result
-        if: steps.run_tests == 'success'
+        if: success() && steps.run_tests == 'success'
         run: echo "Test was successful"
   build:
     needs: test
