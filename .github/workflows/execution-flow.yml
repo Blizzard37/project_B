@@ -33,8 +33,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Test code
+        id: run_tests
         run: npm run test
       - name: Upload test report
+        if steps.run_tests == 'success'
         uses: actions/upload-artifact@v4
         with:
           name: test-report
@@ -69,6 +71,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist-files
+      - name: Test-checkout
+        if test.steps.run_tets == 'success'
+        run: echo "Test was successful"
       - name: Output contents
         run: |
              ls
