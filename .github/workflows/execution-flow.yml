@@ -42,7 +42,7 @@ jobs:
           path: test.json
       - name: Test result
         if: steps.run_tests == 'success'
-          echo "Test was successful"
+        run: echo "Test was successful"
   build:
     needs: test
     runs-on: ubuntu-latest
