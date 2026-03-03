@@ -20,3 +20,7 @@ jobs:
         run: ls
       - name: Deploy
         run: echo "Downloading and Deploying"
+      - name: Display
+        run: |
+              echo "Informix user: $DB_User "
+              echo "Informix password: $DB_Password"
