@@ -72,7 +72,7 @@ jobs:
         with:
           name: dist-files
       - name: Test-checkout
-        if: test.steps.run_tets == 'success'
+        if: jobs.test.steps.run_tets == 'success'
         run: echo "Test was successful"
       - name: Output contents
         run: |
