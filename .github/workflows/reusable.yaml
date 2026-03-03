@@ -23,5 +23,5 @@ jobs:
         run: echo "Downloading and Deploying"
       - name: Display
         run: |
-              echo "Informix user: $ {{secrets.DB_USER}} "
-              echo "Informix password: $secrets.DB_PASSWORD"
+              echo "Informix user: ${{ secrets.DB_USER }} "
+              echo "Informix password: ${{secrets.DB_PASSWORD}}"
