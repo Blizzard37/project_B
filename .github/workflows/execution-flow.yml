@@ -67,6 +67,6 @@ jobs:
           path: dist
   deploy:
     needs: build
-    uses: ./.github/workflow/reusable.yaml
+    uses: ./.github/workflows/reusable.yaml
     with: 
       artifact-name: dist-files
